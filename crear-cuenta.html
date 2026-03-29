@@ -10,20 +10,16 @@
 </head>  
 <body>
     <header>
-        <!--el tag "a" es un enlace para navegar hacia otra pagina, mientras que el tag "button" ejecuta una accion dentro de la misma-->
-        <a href="index.html"> <!--href hace referencia a donde va el enlace, en este caso a la pagina principal, si es que se llama index.html-->
-            <img src="logo.png">
-            <!-- src indica de donde viene el recurso, es decir, la imagen en si-->
-            <!--alt es la alternativa a la imagen, si esta no carga aparece esa foto-->
-        </a>
+        <a href="index.html"> 
+            <img src="logo.png" alt="">
         <a href="carrito.html">
-            Carrito<!--Nombre del boton: "Carrito"-->
+            Carrito
         </a>
-        <form action="busqueda.PHP" method="get"><!--el tag "form" indica que es un formulario-->
-            <input type="text" name="busqueda" placeholder="Buscar..."> <!--el tag "input" indica que el usuario debe ingresar algo, en este caso un texto-->
+        <form action="busqueda.PHP" method="get">
+            <input type="text" name="busqueda" placeholder="Buscar..."> 
         </form> 
         <a href="crear-cuenta.html">
-            Registrarse <!--Nombre del boton: "Registrarse"-->
+            Registrarse
         </a>  
     </header>
     <main>
@@ -36,6 +32,7 @@
         <h1>Crea cuenta</h1>
         <p>Compra mas rapido y lleva el control de tus pedidos, ¡en un solo lugar!</p>    
         <form action="crea_cuenta.PHP" method="post">
+            <fieldset>
             <legend>Datos personales:</legend>
                 <label for="nombre_apellido">Nombre y apellido</label>
                 <label for="email">Email</label>
@@ -52,23 +49,23 @@
         </form>
     </main>
     <footer>
-        <nav><!--nav quiere decir que los enlaces que se encuentran dentro de este tag con para navegar a otros sitios o a este mismo sitio-->
+        <nav>
             <h2>Redes sociales</h2>
-            <ul type="square">
+            <ul><!--HABIA PUESTO type="square" PERO EL VALIDADOR DICE QUE ESTA OBSOLETO, QUE ESO SE DEBE HACER CON CSS-->
                 <li><a href="https://www.instagram.com/dueño_libreria">
-                <img src="logoIG.png">
+                <img src="logoIG.png" alt="">
             </a></li>
             <li><a href="https://www.facebook.com/">
-                <img src="logoFACEBOOK.png">
-            </a></li>
+                <img src="logoFACEBOOK.png" alt="">
+            </a></li>    
             <li><a href="https://www.x.com/">
-                <img src="logoX.png">
+                <img src="logoX.png" alt="">
             </a></li>
             </ul>
         </nav>
         <nav>
             <h2>PawPrint</h2>
-            <ul type="square">
+            <ul><!--HABIA PUESTO type="square" PERO EL VALIDADOR DICE QUE ESTA OBSOLETO, QUE ESO SE DEBE HACER CON CSS-->
                 <li>
                 <a href="nosotros.html">
                 Nosotros
@@ -87,9 +84,9 @@
             </ul>
         
         </nav>  
+        <h2>Atencion al cliente</h2>
         <address>
-            <h2>Atencion al cliente</h2>
-            <ul type="square">
+            <ul><!--HABIA PUESTO type="square" PERO EL VALIDADOR DICE QUE ESTA OBSOLETO, QUE ESO SE DEBE HACER CON CSS-->
             <li><a href="tel:+5491198765432">+54 011 98765432</a></li>
             <li><a href="mailto:atencion@lib.com">atencion@lib.com</a></li>
             <li>Calle Falsa 123</li>
