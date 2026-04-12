@@ -251,6 +251,9 @@ main > section > article {
     overflow: hidden;
     box-shadow: var(--sombra);
     transition: transform var(--transicion), box-shadow var(--transicion);
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
 }
 
 main > section > article:hover {
@@ -365,12 +368,13 @@ main > section > article p {
 article figure {
     display: flex;
     flex-direction: column;
+    flex: 1;
 }
 
 article figure picture {
-    aspect-ratio: 4/3;
     overflow: hidden;
     background: var(--color-suave);
+    flex: 1;
 }
 
 article figure picture img {
@@ -388,6 +392,7 @@ article figure footer {
     padding: .65rem 1rem;
     border-top: 1px solid var(--color-borde);
     background: var(--color-suave);
+    margin-top: auto;
 }
 
 article figure footer p a {

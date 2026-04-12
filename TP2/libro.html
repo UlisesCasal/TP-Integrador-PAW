@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PAWPrints - Detalle del libro</title>
+  <link rel="stylesheet" href="css/style.css">    <link rel="stylesheet" href="css/libro.css">  <title>PAWPrints - Detalle del libro</title>
 </head>
 <body>
 
     <header>
-        <img src="img/logo.png" alt="logo">
+        <img src="media/PAWPrintsLOGO.svg" alt="logo">
         <h1>Libreria</h1>
     
         <nav>
@@ -17,14 +17,16 @@
                 <li><a href="libros.html">Libros</a></li>
                 <li><a href="autores.html">Autores</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="login.html">Registro</a></li>
-                <li><a href="carrito.html">Carrito</a></li>
             </ul>
             <form action="libros.html" method="get" role="search">
                 <label for="busqueda-libros">Buscar libro:</label>
                 <input type="search" id="busqueda-libros" name="q" placeholder="Título, autor o género">
                 <button type="submit">Buscar</button>
             </form>
+            <div class="nav-acciones">
+                <a href="login.html">Registro</a>
+                <a href="carrito.html">Carrito</a>
+            </div>
         </nav>
     </header>
 
@@ -41,9 +43,9 @@
     </section>
 
     <section aria-label="Datos del libro">
-      <h1>Titulo</h1>
-      <h2>Autor</h2>
-      <p><strong>Precio</strong></p>
+      <h1>Titulo del Libro</h1>
+      <h2>Autor del Libro</h2>
+      <p><strong>$20.000</strong></p>
     </section>
 
     <section aria-label="Comprar">
@@ -58,26 +60,7 @@
     </section>
 
     <section aria-label="Descripción del libro">
-      <h4>Descripcion</h4>
-
-      <dl>
-        <dt>ISBN:</dt>
-        <dd>9789505472413</dd>
-
-        <dt>Encuadernacion:</dt>
-        <dd>Tapa Blanda</dd>
-
-        <dt>Idioma:</dt>
-        <dd>Español</dd>
-
-        <dt>Números de páginas:</dt>
-        <dd>688</dd>
-
-        <dt>Fecha de publicación:</dt>
-        <dd><time datetime="2022-03-03">03/03/2022</time></dd>
-      </dl>
-
-      <h4>Sinopsis</h4>
+      <h4>Descripción</h4>
       <p>
         Rand, acosado por inquietantes sueños sobre una espada de cristal,
         decide abandonar a sus compañeros tras un ataque de Engendros de la
@@ -94,6 +77,60 @@
       </p>
     </section>
 
+    <section aria-label="Ficha técnica del libro">
+      <header><h5>Datos técnicos</h5></header>
+      <ul>
+        <li><strong>ISBN:</strong> <span>9789505472413</span></li>
+        <li><strong>Encuadernación:</strong> <span>Tapa blanda</span></li>
+        <li><strong>Idioma:</strong> <span>Español</span></li>
+        <li><strong>Páginas:</strong> <span>688</span></li>
+        <li><strong>Publicación:</strong> <time datetime="2022-03-03">03/03/2022</time></li>
+      </ul>
+    </section>
+  
+    <section aria-label="Libros relacionados">
+            <header>
+                <h2>Libros relacionados</h2>
+            </header>
+            <article>
+                <h3>libro 1</h3>
+                <figure>
+                    <picture>
+                        <img src="libro1L.jpg" alt="">
+                        <source srcset="libro1L.jpg" media="( min-width: 1024px )">
+                        <source srcset="libro1S.jpg" media="( max-width: 480px )">
+                        <source srcset="libro1C.jpg" media="( 480px <= width <= 1024px )">
+                    </picture>
+                    <footer>
+                        <p><a href="productos.html">Comprar</a></p>
+                    </footer>
+                </figure>
+            </article>
+            <article>
+                <h3>libro 2</h3>
+                <figure>
+                    <picture>
+                        <img src="libro2L.webp" alt="">
+                        <source srcset="libro2L.webp" media="( min-width: 1024px )">
+                    </picture>
+                    <footer>
+                        <p><a href="productos.html">Comprar</a></p>
+                    </footer>
+                </figure>
+            </article>
+            <article>
+                <h3>libro 3</h3>
+                <figure>
+                    <picture>
+                        <img src="Libro3L.webp" alt="">
+                        <source srcset="Libro3L.webp" media="( min-width: 1024px )">
+                    </picture>
+                    <footer>
+                        <p><a href="productos.html">Comprar</a></p>
+                    </footer>
+                </figure>
+            </article>
+        </section>
   </main>
 
   <footer>
