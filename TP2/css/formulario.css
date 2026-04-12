@@ -170,13 +170,9 @@
     border-color: var(--color-primario);
 }
 
-/* Placeholders más visibles — gris medio */
-
-.form-pago input[type="text"]::placeholder,
-.form-pago input[type="tel"]::placeholder,
-.form-pago input[type="number"]::placeholder {
-    color: #888;
-    opacity: 1;
+.form-pago input::placeholder {
+    color: #bbb;
+    font-style: italic;
 }
 
 /* Grupo de fecha de expiración — mantiene los inputs de MM y AA juntos sin estirarse */
