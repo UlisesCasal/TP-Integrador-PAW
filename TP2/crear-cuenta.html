@@ -2,14 +2,14 @@
 <html lang="es">
 <head>
     <title>crear-cuenta</title> 
-    <base href="/" target="_blank">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/crear-cuenta.css">
 </head>  
 <body>
     <header>
-        <img src="img/logo.png" alt="logo">
-        <h2>Libreria</h2>
+        <img src="media/PAWPrintsLOGO.svg" alt="logo">
+        <h1>Libreria</h1>
     
         <nav>
             <ul>
@@ -17,51 +17,49 @@
                 <li><a href="libros.html">Libros</a></li>
                 <li><a href="autores.html">Autores</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="login.html">Registro</a></li>
-                <li><a href="carrito.html">Carrito</a></li>
             </ul>
             <form action="libros.html" method="get" role="search">
                 <label for="busqueda-libros">Buscar libro:</label>
                 <input type="search" id="busqueda-libros" name="q" placeholder="Título, autor o género">
                 <button type="submit">Buscar</button>
             </form>
+            <div class="nav-acciones">
+                <a href="login.html">Registro</a>
+                <a href="carrito.html">Carrito</a>
+            </div>
         </nav>
     </header>
     <main>
-        <nav>
-            <ol>
-                <li><a  href="index.html">Inicio</a></li>
-                <li aria-current="page"> Crear cuenta</li><!--Aria-current="page" le dice al browser que es la pagina actual-->
-            </ol>
-        </nav>
-        <h1>Crea cuenta</h1>
-        <p>Compra mas rapido y lleva el control de tus pedidos, ¡en un solo lugar!</p>    
+        <h1>Crear cuenta</h1> 
         <form action="crea_cuenta.PHP" method="post">
             <fieldset>
             <legend>Datos personales:</legend>
                 <label for="nombre_apellido">Nombre y apellido</label>
-                <label for="email">Email</label>
-                <label for="telefono">Telefono (opcional)</label>
-                <label for="contraseña">Contraseña</label>
-                <label for="ccontraseña">Confirmar contraseña</label>
                 <input type="text" id="nombre_apellido" name="nombre_apellido" placeholder="ej.: Maria Perez" required>
+                <label for="email">Email</label>
                 <input type="email" id="email" name="email" placeholder="ej.:tuemail@email.com" required>
+                <label for="telefono">Telefono (opcional)</label>
                 <input type="tel" id="telefono" name="telefono" placeholder="ej.:+54 011 11111111">
+                <label for="contraseña">Contraseña</label>
                 <input type="password" id="contraseña" name="contraseña" placeholder="ej.:tucontraseña" required>
-                <input type="password" id="ccontraseña" name="contraseña" placeholder="ej.:tucontraseña" required>
+                <label for="ccontraseña">Confirmar contraseña</label>
+                <input type="password" id="ccontraseña" name="ccontraseña" placeholder="ej.:tucontraseña" required>       
             </fieldset>
             <button type="submit">Crear cuenta</button>
         </form>
+        <div class="form-link">
+            <p>¿Ya tienes una cuenta? <a href="inicio-sesion.html">Iniciar sesión</a></p>
+        </div>
     </main>
         <footer>
             <section aria-label="Redes sociales">
                 <h2>Seguinos</h2>
                 <ul>
-                    <li><a href="https://www.instagram.com/tu_usuario" target="_blank"
+                    <li><a href="https://www.instagram.com" target="_blank"
                             rel="noopener noreferrer">Instagram</a></li>
-                    <li><a href="https://www.twitter.com/tu_usuario" target="_blank"
+                    <li><a href="https://www.twitter.com" target="_blank"
                             rel="noopener noreferrer">Twitter</a></li>
-                    <li><a href="https://www.facebook.com/tu_usuario" target="_blank"
+                    <li><a href="https://www.facebook.com" target="_blank"
                             rel="noopener noreferrer">Facebook</a></li>
                 </ul>
             </section>
@@ -89,7 +87,7 @@
                 <img src="img/logo.png" alt="Data fiscal">
                 <p><small>© 2026 Paw Print. Todos los derechos reservados.</small></p>
             </section>
-        </footer>
+    </footer>
 
 </body> 
 </html>
