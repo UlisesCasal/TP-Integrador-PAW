@@ -370,3 +370,25 @@
         grid-template-columns: 1fr;
     }
 }
+/* ─── Modo Impresión para Formulario ─── */
+@media print {
+    /* Forzar que los círculos y cuadros de selección sean negros */
+    .form-pago input[type="radio"],
+    .form-pago input[type="checkbox"] {
+        display: inline-block !important; /* Asegurar que no se oculten si se usó la regla anterior */
+        accent-color: #000 !important;
+        border: 1pt solid #000 !important;
+        background-color: #fff !important;
+        print-color-adjust: exact; /* Fuerza al navegador a renderizar el color de acento */
+    }
+
+    /* Si el navegador no soporta accent-color en impresión, 
+       podemos asegurar el contraste del label adyacente */
+    .form-pago input[type="radio"] + label,
+    .form-pago input[type="checkbox"] + label {
+        color: #000 !important;
+        font-weight: 600 !important;
+    }
+}
+
+

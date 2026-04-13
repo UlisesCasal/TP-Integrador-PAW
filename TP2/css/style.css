@@ -482,3 +482,128 @@ body > footer > section:last-child small {
     font-size: .7rem;
     color: rgba(255, 255, 255, .45);
 }
+
+/* ─── Modo Impresión ─── */
+@media print {
+    /* Forzar fondo blanco y texto negro en todo el documento */
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    body {
+        font-size: 12pt;
+        background-color: #fff;
+    }
+
+    /* Ocultar elementos interactivos e innecesarios */
+    header nav ul,
+    .nav-acciones,
+    header nav form,
+    footer,
+    .btn, 
+    article figure footer {
+        display: none !important;
+    }
+
+    /* Ajustes de Main y Secciones */
+    main {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    main > section {
+        display: block; /* Evita problemas de fragmentación de grilla en impresión */
+        page-break-inside: auto;
+    }
+
+    main > section > header h2 {
+        color: #000 !important;
+        border-bottom: 1pt solid #000;
+        padding-bottom: 5pt;
+        margin-top: 20pt;
+    }
+
+    /* Ajuste de Cards */
+    main > section > article {
+        border: 1pt solid #ccc;
+        page-break-inside: avoid;
+        margin-bottom: 1.5rem;
+        min-height: auto !important;
+        display: block;
+    }
+
+    /* Convertir imágenes a escala de grises */
+    img {
+        filter: grayscale(100%);
+        max-width: 100% !important;
+    }
+
+    /* Mostrar URLs de los enlaces después del texto */
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 9pt;
+        color: #333;
+    }
+
+    /* No mostrar URLs en enlaces internos o botones */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    /* Optimización de Márgenes de página */
+    @page {
+        margin: 2cm;
+    }
+    main > section {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 1cm !important;
+        page-break-inside: auto;
+    }
+
+    /* Ajuste específico para la sección de categorías (círculos) */
+    .seccion-circulos {
+        grid-template-columns: repeat(auto-fit, 120px) !important;
+        justify-content: center !important;
+    }
+
+    /* Asegurar que los artículos no se corten entre páginas */
+    main > section > article {
+        border: 1pt solid #ccc;
+        page-break-inside: avoid;
+        break-inside: avoid;
+        display: flex !important;
+        flex-direction: column !important;
+        min-height: auto !important;
+        height: auto !important;
+    }
+
+    /* Forzar que las imágenes mantengan su tamaño para no romper la grilla */
+    article figure picture {
+        height: 150px !important;
+    }
+
+    .seccion-circulos > article {
+        width: 120px !important;
+        height: 120px !important;
+    }
+    /* Eliminar cabecera y bordes de color */
+    body > header {
+        display: none !important;
+        border: none !important;
+        background: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Reset general de bordes que puedan tener color */
+    * {
+        border-color: #000 !important;
+    }
+}

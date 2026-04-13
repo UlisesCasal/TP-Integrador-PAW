@@ -193,3 +193,67 @@ main > section[aria-label="servicios"]  { animation-delay: .35s; }
         box-shadow: 0 10px 32px rgba(0, 194, 255, .10);
     }
 }
+
+/* ─── Modo Impresión para Nosotros ─── */
+@media print {
+    /* Eliminar la línea decorativa de color debajo del H1 */
+    main > h1::after {
+        background: #000 !important;
+        width: 100pt !important;
+    }
+
+    /* Reset de las secciones de contenido */
+    main > section[aria-label] {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        border: 1pt solid #000 !important; /* Bordes negros en lugar de violetas */
+        transform: none !important;
+        page-break-inside: avoid; /* Evita que una sección se parta entre páginas */
+        margin-bottom: 2rem !important;
+    }
+
+    /* Eliminar la franja de color lateral izquierda */
+    main > section[aria-label]::before {
+        display: none !important;
+    }
+
+    /* Títulos de sección en negro y sin adornos de color */
+    main > section[aria-label] h2 {
+        color: #000 !important;
+    }
+
+    /* El círculo decorativo antes del H2 pasa a ser negro sólido */
+    main > section[aria-label="historia"] h2::before,
+    main > section[aria-label="mision"] h2::before,
+    main > section[aria-label="servicios"] h2::before {
+        background: #000 !important;
+    }
+
+    /* Ajuste de los párrafos para lectura en papel */
+    main > section[aria-label] p {
+        color: #000 !important;
+        font-size: 11pt !important;
+        max-width: 100% !important;
+    }
+
+    /* Mantener la separación de servicios con una línea negra punteada */
+    main > section[aria-label="servicios"] p + p {
+        border-top: 1pt dashed #000 !important;
+    }
+
+    /* Desactivar animaciones para la impresión */
+    main > h1,
+    main > section[aria-label] {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    /* Asegurar que el layout de dos columnas sea legible o colapse si es necesario */
+    @media (min-width: 860px) {
+        main > section[aria-label] h2 {
+            border-right: 1pt solid #000 !important;
+        }
+    }
+}

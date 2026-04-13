@@ -453,3 +453,16 @@ body > footer section[aria-label="Información legal"] p {
         margin-bottom: 1rem;
     }
 }
+@media print {
+    /* Elimina la visualización de la URL después del texto del enlace */
+    a[href]:after {
+        content: none !important;
+    }
+
+    /* En caso de que prefieras ser más específico para no afectar otros elementos */
+    nav a:after, 
+    footer a:after,
+    .btn:after {
+        content: "" !important;
+    }
+}
